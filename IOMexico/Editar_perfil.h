@@ -23,9 +23,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *enviar;
 @property (strong, nonatomic) IBOutlet UIView *datos;
 @property (nonatomic, retain) UIImageView *imageView;
-
--(IBAction)TakePhoto;
--(IBAction)Existente;
 -(IBAction)updateprofile;
 
 

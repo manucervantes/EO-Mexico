@@ -11,9 +11,6 @@
 @interface Calendario : UIViewController <UITableViewDelegate,UITableViewDataSource>{
     NSMutableArray *tableViewData;
     NSMutableArray *tableIdViewData;
-
-   IBOutlet UIActivityIndicatorView *activityind;
-    
 }
 @property (strong, nonatomic) IBOutlet UITableView *contenedor;
 @property (retain,nonatomic)   NSMutableArray *tableViewData;

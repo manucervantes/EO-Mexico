@@ -20,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -28,13 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (IBAction)regresar:(id)sender {
 [self dismissViewControllerAnimated:YES  completion:nil];
@@ -46,44 +43,30 @@
     
     if (nombre.length == 0 || email.length == 0 || empresa == 0 )
     {
-        NSLog(@"vacio ");
         PFUser *user = [PFUser currentUser];
-        
-        NSLog(@"%@",user.objectId);
-        
     }
     else{
         
         PFUser *user = [PFUser currentUser];
         NSString *Id_user = [NSString stringWithFormat:@"%@",user.objectId ];
-
-        
         PFObject *recomendados = [PFObject objectWithClassName:@"Recomendados"];
         recomendados[@"Nombre"] = txt_Nombre.text;
         recomendados[@"Email"] = txt_Email.text;
         recomendados[@"Empresa"] = txt_Empresa.text;
         [recomendados setObject:user forKey:@"quien_recomienda"];
-
         [recomendados saveInBackground];
-    
-    
     }
-    
-        
 }
 
 - (IBAction)cerrar_teclado:(id)sender {
     [txt_Nombre resignFirstResponder];
-
 }
 - (IBAction)cerrar_tecladoEmail:(id)sender {
     [txt_Email resignFirstResponder];
-
 }
 
 - (IBAction)cerrar_tecladoEmpresa:(id)sender {
     [txt_Empresa resignFirstResponder];
-
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{

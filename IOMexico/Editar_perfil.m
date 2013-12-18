@@ -22,8 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-    }
+     }
     return self;
 }
 
@@ -31,7 +30,6 @@
 {
     [super viewDidLoad];
     [self cargar_datos];
-	// Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated {
     [self actualizar_txtbutton];
@@ -46,13 +44,10 @@
     [UIView setAnimationDuration:0.7];
     datos.alpha = 1.0;
     CGRect frame_datos = datos.frame;
-    
     frame_datos.origin.x = 0;
     frame_datos.origin.y = 3;
     datos.frame = frame_datos;
     [UIView commitAnimations];
-
-    
 }
 
 
@@ -60,29 +55,25 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 
--(IBAction)TakePhoto{
+-(void)TakePhoto{
     picker = [[UIImagePickerController alloc]init];
     picker.delegate = self;
     [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
     [self  presentViewController:picker animated:YES completion:NULL];
 }
 
--(IBAction)Existente{
-    
+-(void)Existente{
     picker2 = [[UIImagePickerController alloc]init];
     picker2.delegate = self;
     [picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self  presentViewController:picker2 animated:YES completion:NULL];
-    
 }
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info  {
-    
     image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [imageView setImage:image];
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -94,11 +85,9 @@
 
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [self dismissViewControllerAnimated:YES completion:NULL];
-    
 }
 
 -(IBAction)fotho{
-    
     UIAlertView *alert_photo  = [[UIAlertView alloc ] initWithTitle:@"Tomar Foto" message:@"selecciona el origen de tu foto" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:@"Del dispositivo",@"De la camara", nil];
     [alert_photo show];
     
@@ -107,7 +96,6 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex  == 1){
         [self Existente];
-        
     }
     else if (buttonIndex == 2){
         [self TakePhoto];
@@ -118,25 +106,18 @@
     NSString *puesto;
     NSString *empresa;
     NSString *ciudad;
-    
-    
     nombre = nombre_txt.text;
     puesto  = puesto_txt.text;
     empresa = empresa_txt.text;
     ciudad = ciudad_txt.text;
-    
     PFUser *user = [PFUser currentUser];
     PFQuery *query = [PFQuery queryWithClassName:@"Perfil"];
     [query whereKey:@"User" equalTo: user];
-    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
             if (objects.count == 0) {
                 NSData *imageDatafile  = UIImageJPEGRepresentation(image, 300);
                 PFFile *imageFile  = [PFFile fileWithName:@"photo" data:imageDatafile];
-                
                 PFObject *perfil = [PFObject objectWithClassName:@"Perfil"];
                 perfil[@"nombre"] = nombre;
                 perfil[@"puesto"] = puesto;
@@ -161,9 +142,7 @@
                 [[objects objectAtIndex:0] saveInBackground];
                 [self    cambiarPantalla];
             }
-            
                     } else {
-            // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
@@ -177,7 +156,6 @@
 }
 - (IBAction)cerrarTeclao:(id)sender {
     [nombre_txt resignFirstResponder];
-    
     [puesto_txt resignFirstResponder];
     [empresa_txt resignFirstResponder];
     [ciudad_txt resignFirstResponder];
@@ -197,27 +175,19 @@
 }
 
 -(void)actualizar_txtbutton{
-    
     PFUser *user = [PFUser currentUser];
     PFQuery *query = [PFQuery queryWithClassName:@"Perfil"];
     [query whereKey:@"User" equalTo: user];
-    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
             if (objects.count == 0) {
-                
                 [enviar setTitle:@"Crear" forState:UIControlStateNormal];
-
             }
             else{
                 [enviar setTitle:@"Actualizar" forState:UIControlStateNormal];
-       
             }
             
         } else {
-            // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
@@ -227,18 +197,15 @@
 
 - (IBAction)regresar:(id)sender {
     [self   cambiarPantalla];
-
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    if (textField == nombre_txt) {
-    }
-    else if (textField == puesto_txt){
+     if (textField == puesto_txt){
         [self trans_puesto];
     }
     else if (textField == empresa_txt){
         [self trans_empresa];
         
-    }else
+    }else if(textField == ciudad_txt)
     {
         [self trans_ciudad];
     }
@@ -248,13 +215,10 @@
     [UIView setAnimationDuration:0.7];
     datos.alpha = 1.0;
     CGRect frame_datos = datos.frame;
-    
     frame_datos.origin.x = 0;
     frame_datos.origin.y = 0;
     datos.frame = frame_datos;
     [UIView commitAnimations];
-    
-    
 }
 
 -(void)trans_puesto{
@@ -262,45 +226,34 @@
     [UIView setAnimationDuration:0.7];
     datos.alpha = 1.0;
     CGRect frame_datos = datos.frame;
-    
     frame_datos.origin.x = 0;
     frame_datos.origin.y = -20;
     datos.frame = frame_datos;
-    [UIView commitAnimations];
-    
-    
+    [UIView commitAnimations];  
 }
 -(void)trans_empresa{
     [UIView beginAnimations:@"advancedAnimations" context:nil];
     [UIView setAnimationDuration:0.7];
     datos.alpha = 1.0;
     CGRect frame_datos = datos.frame;
-    
     frame_datos.origin.x = 0;
     frame_datos.origin.y = -60;
     datos.frame = frame_datos;
     [UIView commitAnimations];
-    
-    
 }
 -(void)trans_ciudad{
     [UIView beginAnimations:@"advancedAnimations" context:nil];
     [UIView setAnimationDuration:0.7];
     datos.alpha = 1.0;
     CGRect frame_datos = datos.frame;
-    
     frame_datos.origin.x = 0;
     frame_datos.origin.y = -140;
     datos.frame = frame_datos;
     [UIView commitAnimations];
-    
-    
 }
 - (void) cambiarPantalla{
-    
     Perfil *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"perfil"];
     controller.modalPresentationStyle = UIModalPresentationFormSheet;
-    
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:controller animated:YES completion:nil];
 }
@@ -309,13 +262,11 @@
 }
 
 -(void)cargar_datos{
-    
     PFUser *user = [PFUser currentUser];
     PFQuery *query = [PFQuery queryWithClassName:@"Perfil"];
     [query whereKey:@"User" equalTo: user];
     [query  findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(!error){
-            
             for (PFObject *object in objects ) {
                 NSString *nombre = [object objectForKey:@"nombre"];
                 NSString *puesto = [object objectForKey:@"puesto"];
@@ -325,19 +276,16 @@
                 puesto_txt.text = puesto;
                 empresa_txt.text = empresa;
                 ciudad_txt.text = ciudad;
-                
                 PFFile *theimage =[object objectForKey:@"foto"];
                 [theimage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     NSData *imagedata = data;
                     UIImage *imagen = [UIImage imageWithData:imagedata];
                     imageView.image = imagen;
                 }];
-                
-                
             }
         }
         else{
-            NSLog(@"Parse Error");
+            NSLog(@"Parse Error %@",error);
         }
     }];
     

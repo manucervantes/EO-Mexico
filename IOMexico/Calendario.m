@@ -18,15 +18,14 @@
 @synthesize tableViewData;
 @synthesize tableIdViewData;
 @synthesize contenedor = _contenedor;
-
 int flag = 0, flag2 = 0;
 NSMutableArray *object_data;
 NSString *dato;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -37,14 +36,11 @@ NSString *dato;
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    
     tableViewData = [[NSMutableArray alloc]init];
     tableIdViewData = [[NSMutableArray alloc]init];
     [self cargar_tabla];
-
 }
 -(void)cargar_tabla{
-    
     [[self contenedor]setDelegate:self];
     [[self contenedor]setDataSource:self];
     [self.contenedor setBackgroundView:nil];
@@ -53,7 +49,6 @@ NSString *dato;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
-                NSLog(@"%@", [object objectForKey:@"Titulo"]);
                 NSString *resumen = [NSString stringWithFormat:@"%@", [object objectForKey:@"Titulo"]];
                 NSString *ides = object.objectId;
                 [tableViewData addObject:resumen];
@@ -73,19 +68,15 @@ NSString *dato;
     return  1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"count %lu",(unsigned long)[tableViewData count]);
     return [tableViewData count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
     UITableViewCell *cell  = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell"];
     if (cell == nil) {
         cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyCell"];
     }
     cell.textLabel.text = [tableViewData objectAtIndex:indexPath.row];
-    
     return cell;
 }
 

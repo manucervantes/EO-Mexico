@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface Noticias : UIViewController <UITableViewDelegate,UITableViewDataSource>{
-    
     NSMutableArray *tableViewData;
     NSMutableArray *tableIdViewData;
-
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *contenedor;

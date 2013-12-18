@@ -11,10 +11,8 @@
 @interface Miembros : UIViewController <UITableViewDelegate,UITableViewDelegate>{
     NSMutableArray *tableViewData;
     NSMutableArray *tableIdViewData;
-
 }
 @property (strong, nonatomic) IBOutlet UITableView *contenedor;
 @property (retain,nonatomic)   NSMutableArray *tableViewData;
-
 @property (retain,nonatomic)   NSMutableArray *tableIdViewData;
 @end
