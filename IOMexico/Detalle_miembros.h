@@ -10,5 +10,10 @@
 
 @interface Detalle_miembros : UIViewController
 @property (copy,readwrite) NSString *ides;
+@property (strong, nonatomic) IBOutlet UILabel *puesto;
+@property (strong, nonatomic) IBOutlet UILabel *nombre;
+@property (strong, nonatomic) IBOutlet UILabel *empresa;
+@property (strong, nonatomic) IBOutlet UILabel *ciudad;
+@property (strong, nonatomic) IBOutlet UIImageView *avatar;
 
 @end
