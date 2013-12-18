@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="-589" y="-1176"/>
         </scene>
-        <!--View Controller-->
+        <!--Detalle miembros-->
         <scene sceneID="j2Z-69-0xh">
             <objects>
-                <viewController id="Fbc-Lr-1ir" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detalle_miembros" id="Fbc-Lr-1ir" customClass="Detalle_miembros" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IHr-at-V71"/>
                         <viewControllerLayoutGuide type="bottom" id="1p5-cH-aOM"/>
@@ -115,6 +115,18 @@
                     <view key="view" contentMode="scaleToFill" id="36k-EO-ccG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTP-wf-fde">
+                                <rect key="frame" x="28" y="40" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Regresar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="regresar:" destination="Fbc-Lr-1ir" eventType="touchUpInside" id="Zvv-kq-LTd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -418,10 +430,10 @@
                                     <action selector="cerrart" destination="jxc-wt-kgZ" eventType="editingDidEndOnExit" id="ax9-kH-Y5g"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdo-8m-RjC">
-                                <rect key="frame" x="248" y="467" width="43" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdo-8m-RjC">
+                                <rect key="frame" x="211" y="452" width="80" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Enviar">
+                                <state key="normal" image="btnaplikr.png">
                                     <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -479,6 +491,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="cerrarTEclado:" destination="0WF-JD-hXY" eventType="editingDidEndOnExit" id="snQ-pg-iMt"/>
+                                    <action selector="proof:" destination="0WF-JD-hXY" eventType="touchUpInside" id="Krf-FR-R2e"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qXh-fx-kSq">
@@ -508,10 +521,10 @@
                                     <action selector="cerrarTEclado:" destination="0WF-JD-hXY" eventType="editingDidEndOnExit" id="NWK-fE-kg6"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJO-YO-D9L">
-                                <rect key="frame" x="174" y="481" width="116" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJO-YO-D9L">
+                                <rect key="frame" x="195" y="476" width="80" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" image="btnaplikr.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -584,6 +597,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kU6-JL-n19">
+                                <rect key="frame" x="94" y="73" width="134" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fondoperfil.png" translatesAutoresizingMaskIntoConstraints="NO" id="L6T-ZO-wmy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -595,7 +612,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="regresar:" destination="2px-Bz-u0M" eventType="touchUpInside" id="kle-9W-uU7"/>
+                                    <segue destination="VLk-sR-VfN" kind="modal" id="bNY-KQ-QAf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcn-RT-GfY">
@@ -608,15 +625,57 @@
                                     <segue destination="0WF-JD-hXY" kind="modal" id="XST-iJ-FwV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kU6-JL-n19">
-                                <rect key="frame" x="94" y="73" width="134" height="134"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzd-9q-FKr">
+                                <rect key="frame" x="44" y="226" width="232" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSa-pZ-Gez">
+                                <rect key="frame" x="120" y="435" width="143" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Empresa:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haf-bV-ZEG">
+                                <rect key="frame" x="44" y="434" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ciudad:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uS-fX-Jjb">
+                                <rect key="frame" x="57" y="482" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiM-2B-jBW">
+                                <rect key="frame" x="120" y="482" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imk-a8-D3X">
+                                <rect key="frame" x="88" y="273" width="140" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="avatar" destination="kU6-JL-n19" id="xLl-jv-4le"/>
+                        <outlet property="ciudad" destination="TiM-2B-jBW" id="ZeW-AV-M1u"/>
+                        <outlet property="empresa" destination="nSa-pZ-Gez" id="jEY-03-zmI"/>
+                        <outlet property="nombre" destination="Lzd-9q-FKr" id="g0v-tv-W5a"/>
+                        <outlet property="puesto" destination="Imk-a8-D3X" id="lNa-8q-1mX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgD-jB-zL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -749,6 +808,7 @@
     <resources>
         <image name="botonperfil.png" width="54" height="54"/>
         <image name="btn+fotoperfilopciones.png" width="274" height="275"/>
+        <image name="btnaplikr.png" width="150" height="49"/>
         <image name="btncontacto.png" width="593" height="106"/>
         <image name="btneventos.png" width="590" height="125"/>
         <image name="btnmiembros.png" width="573" height="109"/>
@@ -756,13 +816,6 @@
         <image name="btnopcionesperfil.png" width="54" height="56"/>
         <image name="btnregresoperfil.png" width="69" height="65"/>
         <image name="eventosfondo.png" width="640" height="1136"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
         <image name="eventosretorno.png" width="50" height="48"/>
         <image name="fondo.png" width="640" height="1136"/>
         <image name="fondocontacto.png" width="640" height="1136"/>
@@ -772,13 +825,9 @@
         <image name="fondomiembros.png" width="640" height="1136"/>
         <image name="fondoperfil.png" width="640" height="1136"/>
         <image name="fondoperfilopciones.png" width="640" height="1136"/>
-        <image name="fondoperfilopciones.png" width="640" height="1136"/>
-        <image name="linea.png" width="452" height="23"/>
         <image name="linea.png" width="452" height="23"/>
         <image name="lineaeventos.png" width="482" height="22"/>
         <image name="lineatitulodetallenoticias.png" width="434" height="11"/>
-        <image name="lineax3datos contactio.png" width="448" height="17"/>
-        <image name="lineax3datos contactio.png" width="448" height="17"/>
         <image name="lineax3datos contactio.png" width="448" height="17"/>
         <image name="noticiasfondo.png" width="640" height="1136"/>
         <image name="signin.png" width="127" height="45"/>

@@ -10,5 +10,9 @@
 
 @interface Perfil : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *avatar;
+@property (strong, nonatomic) IBOutlet UILabel *nombre;
+@property (strong, nonatomic) IBOutlet UILabel *empresa;
+@property (strong, nonatomic) IBOutlet UILabel *ciudad;
+@property (strong, nonatomic) IBOutlet UILabel *puesto;
 
 @end

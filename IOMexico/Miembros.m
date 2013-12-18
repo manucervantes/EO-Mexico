@@ -8,6 +8,7 @@
 
 #import "Miembros.h"
 #import <Parse/Parse.h>
+#import "Detalle_miembros.h"
 @interface Miembros ()
 
 @end
@@ -16,6 +17,7 @@
 @synthesize tableViewData;
 @synthesize contenedor = _contenedor;
 NSMutableArray *object_data;
+NSString *dato;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +36,7 @@ NSMutableArray *object_data;
 }
 -(void)viewDidAppear:(BOOL)animated{
     tableViewData = [[NSMutableArray alloc]init];
+    tableIdViewData = [[NSMutableArray alloc]init];
 
     [self cargar_tabla];
 }
@@ -47,7 +50,6 @@ NSMutableArray *object_data;
     
     
     PFQuery *query = [PFQuery queryWithClassName:@"Perfil"];
-    // [query selectKeys:@[@"nombre",@"locations"]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
@@ -58,9 +60,11 @@ NSMutableArray *object_data;
                 //  NSLog(@"%@", [object
                 
                 NSString *nombre = [NSString stringWithFormat:@"%@", [object objectForKey:@"nombre"]];
-                
+                NSString *ides = object.objectId;
+
                 [tableViewData addObject:nombre];
-       
+                [tableIdViewData addObject:ides];
+
             }
         } else {
             // Log details of the failure
@@ -100,9 +104,9 @@ NSMutableArray *object_data;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger row = [indexPath row];
-    // NSString *newText = [tableViewData objectAtIndex:row];
-    //if (row==0) {
-    //}
+    
+    dato = [tableIdViewData objectAtIndex:row];
+    [self cambiarPantalla];
     
 }
 
@@ -117,6 +121,19 @@ NSMutableArray *object_data;
 }
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
+}
+
+- (void) cambiarPantalla{
+    
+    Detalle_miembros *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"detalle_miembros"];
+    controller.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    controller.ides = dato;
+    
+    [self presentViewController:controller animated:YES completion:nil];
+    
+    
 }
 
 @end

@@ -69,7 +69,6 @@ NSString *dato;
                 [tableViewData addObject:resumen];
                 [tableIdViewData addObject:ides];
                 
-                //PFGeoPoint *prueba = [object objectForKey:@"Tiempo"];
                 
             }
         } else {
@@ -138,7 +137,6 @@ NSString *dato;
     
     [self presentViewController:controller animated:YES completion:nil];
     
-   // [Detalle_evento setStringValue:[@"adsasd" stringValue]];
 
 }
 

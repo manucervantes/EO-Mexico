@@ -156,12 +156,26 @@
 }
 - (IBAction)cerrarTEclado:(id)sender {
     [nombre_txt resignFirstResponder];
+
     [puesto_txt resignFirstResponder];
     [empresa_txt resignFirstResponder];
     [ciudad_txt resignFirstResponder];
 
 
 
+}
+- (IBAction)proof:(id)sender {
+  
+}
+- (void)killScroll :(UIScrollView*)scrollView
+{
+    CGPoint offset = scrollView.contentOffset;
+    offset.x -= 1.0;
+    offset.y -= 1.0;
+    [scrollView setContentOffset:offset animated:NO];
+    offset.x += 1.0;
+    offset.y += 1.0;
+    [scrollView setContentOffset:offset animated:NO];
 }
 
 -(void)actualizar_txtbutton{
@@ -194,7 +208,8 @@
 }
 
 - (IBAction)regresar:(id)sender {
-    [self dismissViewControllerAnimated:YES  completion:nil];
+    NSLog(@"Te quiero jackeline");
+    [self   cambiarPantalla];
 
 }
 

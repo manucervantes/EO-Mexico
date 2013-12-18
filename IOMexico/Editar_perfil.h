@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Editar_perfil : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+@interface Editar_perfil : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate>{
     
     UIImagePickerController *picker;
     UIImagePickerController *picker2;

@@ -14,7 +14,7 @@
 @end
 
 @implementation Perfil
-@synthesize avatar;
+@synthesize avatar,nombre,puesto,empresa,ciudad;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +39,10 @@
         if (!error) {
             for (PFObject *object in objects) {
                
+                nombre.text = [object objectForKey:@"nombre"];
+                empresa.text = [object objectForKey:@"empresa"];
+                ciudad.text = [object objectForKey:@"ciudad"];
+                puesto.text = [object objectForKey:@"puesto"];
                 PFFile *theimage =[object objectForKey:@"foto"];
                 [theimage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     NSData *imagedata = data;
