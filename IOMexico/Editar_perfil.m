@@ -15,7 +15,7 @@
 @end
 
 @implementation Editar_perfil
-@synthesize nombre_txt,puesto_txt,empresa_txt,ciudad_txt,enviar;
+@synthesize nombre_txt,puesto_txt,empresa_txt,ciudad_txt,enviar,datos,imageView;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,11 +30,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self cargar_datos];
 	// Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated {
     [self actualizar_txtbutton];
+    nombre_txt.delegate = self;
+    puesto_txt.delegate = self;
+    empresa_txt.delegate = self;
+    ciudad_txt.delegate = self;
+
 }
+-(IBAction)trasladar{
+    [UIView beginAnimations:@"advancedAnimations" context:nil];
+    [UIView setAnimationDuration:0.7];
+    datos.alpha = 1.0;
+    CGRect frame_datos = datos.frame;
+    
+    frame_datos.origin.x = 0;
+    frame_datos.origin.y = 3;
+    datos.frame = frame_datos;
+    [UIView commitAnimations];
+
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -154,19 +175,16 @@
     
     
 }
-- (IBAction)cerrarTEclado:(id)sender {
+- (IBAction)cerrarTeclao:(id)sender {
     [nombre_txt resignFirstResponder];
-
+    
     [puesto_txt resignFirstResponder];
     [empresa_txt resignFirstResponder];
     [ciudad_txt resignFirstResponder];
-
-
-
+    [self   regresarframe];
 }
-- (IBAction)proof:(id)sender {
-  
-}
+
+
 - (void)killScroll :(UIScrollView*)scrollView
 {
     CGPoint offset = scrollView.contentOffset;
@@ -208,11 +226,76 @@
 }
 
 - (IBAction)regresar:(id)sender {
-    NSLog(@"Te quiero jackeline");
     [self   cambiarPantalla];
 
 }
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    if (textField == nombre_txt) {
+    }
+    else if (textField == puesto_txt){
+        [self trans_puesto];
+    }
+    else if (textField == empresa_txt){
+        [self trans_empresa];
+        
+    }else
+    {
+        [self trans_ciudad];
+    }
+}
+-(void)regresarframe{
+    [UIView beginAnimations:@"advancedAnimations" context:nil];
+    [UIView setAnimationDuration:0.7];
+    datos.alpha = 1.0;
+    CGRect frame_datos = datos.frame;
+    
+    frame_datos.origin.x = 0;
+    frame_datos.origin.y = 0;
+    datos.frame = frame_datos;
+    [UIView commitAnimations];
+    
+    
+}
 
+-(void)trans_puesto{
+    [UIView beginAnimations:@"advancedAnimations" context:nil];
+    [UIView setAnimationDuration:0.7];
+    datos.alpha = 1.0;
+    CGRect frame_datos = datos.frame;
+    
+    frame_datos.origin.x = 0;
+    frame_datos.origin.y = -20;
+    datos.frame = frame_datos;
+    [UIView commitAnimations];
+    
+    
+}
+-(void)trans_empresa{
+    [UIView beginAnimations:@"advancedAnimations" context:nil];
+    [UIView setAnimationDuration:0.7];
+    datos.alpha = 1.0;
+    CGRect frame_datos = datos.frame;
+    
+    frame_datos.origin.x = 0;
+    frame_datos.origin.y = -60;
+    datos.frame = frame_datos;
+    [UIView commitAnimations];
+    
+    
+}
+-(void)trans_ciudad{
+    [UIView beginAnimations:@"advancedAnimations" context:nil];
+    [UIView setAnimationDuration:0.7];
+    datos.alpha = 1.0;
+    CGRect frame_datos = datos.frame;
+    
+    frame_datos.origin.x = 0;
+    frame_datos.origin.y = -140;
+    datos.frame = frame_datos;
+    [UIView commitAnimations];
+    
+    
+}
 - (void) cambiarPantalla{
     
     Perfil *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"perfil"];
@@ -223,6 +306,41 @@
 }
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
+}
+
+-(void)cargar_datos{
+    
+    PFUser *user = [PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"Perfil"];
+    [query whereKey:@"User" equalTo: user];
+    [query  findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(!error){
+            
+            for (PFObject *object in objects ) {
+                NSString *nombre = [object objectForKey:@"nombre"];
+                NSString *puesto = [object objectForKey:@"puesto"];
+                NSString *empresa = [object objectForKey:@"empresa"];
+                NSString *ciudad = [object objectForKey:@"ciudad"];
+                nombre_txt.text = nombre;
+                puesto_txt.text = puesto;
+                empresa_txt.text = empresa;
+                ciudad_txt.text = ciudad;
+                
+                PFFile *theimage =[object objectForKey:@"foto"];
+                [theimage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    NSData *imagedata = data;
+                    UIImage *imagen = [UIImage imageWithData:imagedata];
+                    imageView.image = imagen;
+                }];
+                
+                
+            }
+        }
+        else{
+            NSLog(@"Parse Error");
+        }
+    }];
+    
 }
 
 @end

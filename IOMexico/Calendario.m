@@ -40,8 +40,8 @@ NSString *dato;
     
     tableViewData = [[NSMutableArray alloc]init];
     tableIdViewData = [[NSMutableArray alloc]init];
-
     [self cargar_tabla];
+
 }
 -(void)cargar_tabla{
     
@@ -49,35 +49,20 @@ NSString *dato;
     [[self contenedor]setDataSource:self];
     [self.contenedor setBackgroundView:nil];
     [self.contenedor setBackgroundColor:[UIColor clearColor]];
-    
-    
-    
     PFQuery *query = [PFQuery queryWithClassName:@"Eventos"];
-    // [query selectKeys:@[@"nombre",@"locations"]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
-            // Do something with the found objects
-            
             for (PFObject *object in objects) {
                 NSLog(@"%@", [object objectForKey:@"Titulo"]);
-                
                 NSString *resumen = [NSString stringWithFormat:@"%@", [object objectForKey:@"Titulo"]];
                 NSString *ides = object.objectId;
-                
                 [tableViewData addObject:resumen];
                 [tableIdViewData addObject:ides];
-                
-                
             }
         } else {
-            // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-    
-    
 }
 
 
@@ -100,7 +85,6 @@ NSString *dato;
         cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyCell"];
     }
     cell.textLabel.text = [tableViewData objectAtIndex:indexPath.row];
-    NSLog(@"cell %@",cell);
     
     return cell;
 }
@@ -109,8 +93,6 @@ NSString *dato;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger row = [indexPath row];
-   // NSString *newText = [tableViewData objectAtIndex:row];
-    
         dato = [tableIdViewData objectAtIndex:row];
           [self cambiarPantalla];
         
@@ -119,7 +101,6 @@ NSString *dato;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (IBAction)regresar:(id)sender {
     [self dismissViewControllerAnimated:YES  completion:nil];
@@ -131,13 +112,9 @@ NSString *dato;
     
     Detalle_evento *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"detalle_eventos"];
     controller.modalPresentationStyle = UIModalPresentationFormSheet;
-    
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     controller.ides = dato;
-    
     [self presentViewController:controller animated:YES completion:nil];
-    
-
 }
 
 

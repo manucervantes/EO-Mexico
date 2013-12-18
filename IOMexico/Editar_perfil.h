@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Editar_perfil : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate>{
+@interface Editar_perfil : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate>{
     
     UIImagePickerController *picker;
     UIImagePickerController *picker2;
@@ -21,6 +21,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *puesto_txt;
 @property (strong, nonatomic) IBOutlet UITextField *ciudad_txt;
 @property (strong, nonatomic) IBOutlet UIButton *enviar;
+@property (strong, nonatomic) IBOutlet UIView *datos;
+@property (nonatomic, retain) UIImageView *imageView;
 
 -(IBAction)TakePhoto;
 -(IBAction)Existente;
