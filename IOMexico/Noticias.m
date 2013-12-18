@@ -94,7 +94,6 @@ NSString *dato;
 
 
 - (void) cambiarPantalla{
-    
     Detalle_noticia *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"detalle_noticias"];
     controller.modalPresentationStyle = UIModalPresentationFormSheet;
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

@@ -33,9 +33,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)regresar:(id)sender {
-        [self dismissViewControllerAnimated:YES  completion:nil];
-}
 
 -(void)viewDidAppear:(BOOL)animated{
     PFQuery *query =[PFQuery queryWithClassName:@"Perfil"];
@@ -61,4 +58,8 @@
     }];
 
 }
+- (IBAction)regresar:(id)sender {
+    [self dismissViewControllerAnimated:YES  completion:nil];
+}
+
 @end

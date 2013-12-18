@@ -855,7 +855,6 @@
         <image name="botonperfil.png" width="54" height="54"/>
         <image name="btn+fotoperfilopciones.png" width="274" height="275"/>
         <image name="btnaplikr.png" width="150" height="49"/>
-        <image name="btnaplikr.png" width="150" height="49"/>
         <image name="btncontacto.png" width="593" height="106"/>
         <image name="btneventos.png" width="590" height="125"/>
         <image name="btnmiembros.png" width="573" height="109"/>
@@ -864,14 +863,6 @@
         <image name="btnregresoperfil.png" width="69" height="65"/>
         <image name="eventosfondo.png" width="640" height="1136"/>
         <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
-        <image name="eventosretorno.png" width="50" height="48"/>
         <image name="fondo.png" width="640" height="1136"/>
         <image name="fondocontacto.png" width="640" height="1136"/>
         <image name="fondodetalle denoticias.png" width="640" height="1136"/>
@@ -879,18 +870,11 @@
         <image name="fondoinicio.png" width="640" height="1136"/>
         <image name="fondomiembros.png" width="640" height="1136"/>
         <image name="fondoperfil.png" width="640" height="1136"/>
-        <image name="fondoperfil.png" width="640" height="1136"/>
-        <image name="fondoperfilopciones.png" width="640" height="1136"/>
         <image name="fondoperfilopciones.png" width="640" height="1136"/>
         <image name="fotoUser.png" width="352" height="352"/>
-        <image name="fotoUser.png" width="352" height="352"/>
-        <image name="fotoUser.png" width="352" height="352"/>
-        <image name="linea.png" width="452" height="23"/>
         <image name="linea.png" width="452" height="23"/>
         <image name="lineaeventos.png" width="482" height="22"/>
         <image name="lineatitulodetallenoticias.png" width="434" height="11"/>
-        <image name="lineax3datos contactio.png" width="448" height="17"/>
-        <image name="lineax3datos contactio.png" width="448" height="17"/>
         <image name="lineax3datos contactio.png" width="448" height="17"/>
         <image name="noticiasfondo.png" width="640" height="1136"/>
         <image name="signin.png" width="127" height="45"/>
