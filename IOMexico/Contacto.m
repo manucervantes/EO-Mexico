@@ -68,19 +68,23 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    if(theTextField==contact_nombre_txt){
+    /*if(theTextField==contact_nombre_txt){
         [contact_asunto_txt becomeFirstResponder];
     }
     else if(theTextField==contact_asunto_txt){
         [contact_mensaje_txt becomeFirstResponder];
-    }
+    }*/
     return YES;
 }
 - (IBAction)cerrart{
     [contact_mensaje_txt resignFirstResponder];
     [contact_asunto_txt resignFirstResponder];
+  [self   regresarframes];
+
+}
+- (IBAction)cerrarname:(id)sender {
+
     [contact_nombre_txt resignFirstResponder];
-    [self   regresarframe];
 
 }
 
@@ -89,18 +93,14 @@
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    if (textField == contact_asunto_txt){
+
+    if(textField == contact_asunto_txt){
         [self trans_asunto];
-        
-    }else if(textField == contact_mensaje_txt)
-    {
+    }else if (textField == contact_mensaje_txt){
         [self trans_mensaje];
     }
-    else{
-        [self regresarframe];
-    }
 }
--(void)regresarframe{
+-(void)regresarframes{
     [UIView beginAnimations:@"advancedAnimations" context:nil];
     [UIView setAnimationDuration:0.7];
     datos.alpha = 1.0;

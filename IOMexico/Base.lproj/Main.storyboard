@@ -445,16 +445,6 @@
                                         <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                         <color key="highlightedColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="lineax3datos contactio.png" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-OZ-umg">
-                                        <rect key="frame" x="29" y="292" width="262" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.99215692281723022" green="0.99215692281723022" blue="0.97647064924240112" alpha="1" colorSpace="deviceRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="cerrart" destination="jxc-wt-kgZ" eventType="editingDidEndOnExit" id="F6W-Ju-Ab1"/>
-                                        </connections>
-                                    </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Asunto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwG-oC-ne3">
                                         <rect key="frame" x="133" y="330" width="54" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -500,6 +490,16 @@
                                             <action selector="enviar_contacto" destination="jxc-wt-kgZ" eventType="touchUpInside" id="pdj-ua-F5Q"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="lineax3datos contactio.png" translatesAutoresizingMaskIntoConstraints="NO" id="6wb-gS-r5g">
+                                        <rect key="frame" x="29" y="292" width="262" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.99215692280000001" green="0.99215692280000001" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="cerrarname:" destination="jxc-wt-kgZ" eventType="editingDidEndOnExit" id="GFl-Nn-SB8"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -509,7 +509,7 @@
                     <connections>
                         <outlet property="contact_asunto_txt" destination="TBC-xU-hhB" id="LAu-ix-aoD"/>
                         <outlet property="contact_mensaje_txt" destination="K68-6N-BXs" id="h6y-ZK-2sJ"/>
-                        <outlet property="contact_nombre_txt" destination="cdW-OZ-umg" id="YFq-YS-GcS"/>
+                        <outlet property="contact_nombre_txt" destination="6wb-gS-r5g" id="2OK-td-5aB"/>
                         <outlet property="datos" destination="BPV-Bp-w9E" id="0n3-rT-ZLf"/>
                     </connections>
                 </viewController>
