@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface Principal : UIViewController
-
+@property (retain,nonatomic)   NSMutableArray *tableViewData_noticias;
+@property (retain,nonatomic)   NSMutableArray *tableIdViewData_noticias;
+@property (retain,nonatomic)   NSMutableArray *tableViewData_eventos;
+@property (retain,nonatomic)   NSMutableArray *tableIdViewData_eventos;
+@property (retain,nonatomic)   NSMutableArray *tableViewData_miembros;
+@property (retain,nonatomic)   NSMutableArray *tableIdViewData_miembros;
 @end

@@ -32,15 +32,20 @@ NSString *dato;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self contenedor]setDelegate:self];
+    [[self contenedor]setDataSource:self];
+    [self.contenedor setBackgroundView:nil];
+    [self.contenedor setBackgroundColor:[UIColor clearColor]];
 }
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    tableViewData = [[NSMutableArray alloc]init];
-    tableIdViewData = [[NSMutableArray alloc]init];
-    [self cargar_tabla];
+    //tableViewData = [[NSMutableArray alloc]init];
+    //tableIdViewData = [[NSMutableArray alloc]init];
+    //[self cargar_tabla];
 }
 -(void)cargar_tabla{
+   /* 
     [[self contenedor]setDelegate:self];
     [[self contenedor]setDataSource:self];
     [self.contenedor setBackgroundView:nil];
@@ -57,7 +62,7 @@ NSString *dato;
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-    }];
+    }];*/
 }
 
 
@@ -77,6 +82,8 @@ NSString *dato;
         cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyCell"];
     }
     cell.textLabel.text = [tableViewData objectAtIndex:indexPath.row];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textColor = [UIColor whiteColor];
     return cell;
 }
 

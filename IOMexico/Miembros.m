@@ -15,6 +15,7 @@
 
 @implementation Miembros
 @synthesize tableViewData;
+@synthesize tableIdViewData;
 @synthesize contenedor = _contenedor;
 NSMutableArray *object_data;
 NSString *dato;
@@ -30,18 +31,20 @@ NSString *dato;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
--(void)viewDidAppear:(BOOL)animated{
-    tableViewData = [[NSMutableArray alloc]init];
-    tableIdViewData = [[NSMutableArray alloc]init];
-    [self cargar_tabla];
-}
--(void)cargar_tabla{
     [[self contenedor]setDelegate:self];
     [[self contenedor]setDataSource:self];
     [self.contenedor setBackgroundView:nil];
     [self.contenedor setBackgroundColor:[UIColor clearColor]];
-    PFQuery *query = [PFQuery queryWithClassName:@"Perfil"];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    NSLog(@"%@",tableIdViewData);
+    /*tableViewData = [[NSMutableArray alloc]init];
+    tableIdViewData = [[NSMutableArray alloc]init];
+    [self cargar_tabla];
+*/}
+-(void)cargar_tabla{
+
+    /*PFQuery *query = [PFQuery queryWithClassName:@"Perfil"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
@@ -53,7 +56,7 @@ NSString *dato;
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-    }];
+    }];*/
 }
 
 
@@ -73,6 +76,8 @@ NSString *dato;
         cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyCell"];
     }
     cell.textLabel.text = [tableViewData objectAtIndex:indexPath.row];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textColor = [UIColor whiteColor];
     return cell;
 }
 
@@ -81,6 +86,7 @@ NSString *dato;
 {
     NSUInteger row = [indexPath row];
     dato = [tableIdViewData objectAtIndex:row];
+    NSLog(@"%@",dato);
     [self cambiarPantalla];
 }
 

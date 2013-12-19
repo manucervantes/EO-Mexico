@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4A477098-1360-43EE-A3BE-A894F0E08146</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EO Mexico City</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>922EF67F-E2BC-44DE-9DE3-CA07486ADBDD</key>
+		<string>https://github.com/manucervantes/EO-Mexico.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IOMexico/EO Mexico City.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5A2F6D20-5826-46D5-B257-0E536ADE4121</key>
+		<string>../../..</string>
+		<key>922EF67F-E2BC-44DE-9DE3-CA07486ADBDD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/manucervantes/EO-Mexico.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5A2F6D20-5826-46D5-B257-0E536ADE4121</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>922EF67F-E2BC-44DE-9DE3-CA07486ADBDD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IOMexico</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5A2F6D20-5826-46D5-B257-0E536ADE4121</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

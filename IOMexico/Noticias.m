@@ -16,6 +16,7 @@
 @implementation Noticias
 
 @synthesize tableViewData;
+@synthesize tableIdViewData;
 @synthesize contenedor = _contenedor;
 NSString *dato;
 
@@ -31,6 +32,11 @@ NSString *dato;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self contenedor]setDelegate:self];
+    [[self contenedor]setDataSource:self];
+    [self.contenedor setBackgroundView
+     :nil];
+    [self.contenedor setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,7 +46,9 @@ NSString *dato;
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    tableIdViewData = [[NSMutableArray alloc]init];
+   //
+    
+    /*tableIdViewData = [[NSMutableArray alloc]init];
     tableViewData = [[NSMutableArray alloc]init];
     [[self contenedor]setDelegate:self];
     [[self contenedor]setDataSource:self];
@@ -58,7 +66,11 @@ NSString *dato;
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-    }];
+    }];*/
+    
+    NSLog(@"%@",tableViewData);
+    NSLog(@"%@",tableIdViewData);
+    
 }
 
 #pragma mark -
@@ -67,6 +79,8 @@ NSString *dato;
     return  1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSLog(@"%@",tableViewData);
+
     return [tableViewData count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -76,12 +90,16 @@ NSString *dato;
         cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyCell"];
     }
     cell.textLabel.text = [tableViewData objectAtIndex:indexPath.row];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textColor = [UIColor whiteColor];
+    
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSUInteger row = [indexPath row];
     dato = [tableIdViewData objectAtIndex:row];
+    NSLog(@"%@",dato);
     [self cambiarPantalla];
 }
 - (IBAction)regresar:(id)sender {
@@ -98,8 +116,10 @@ NSString *dato;
     controller.modalPresentationStyle = UIModalPresentationFormSheet;
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     controller.ides = dato;
+    
     [self presentViewController:controller animated:YES completion:nil];
 }
+
 
 
 @end
