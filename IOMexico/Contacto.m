@@ -15,7 +15,7 @@
 
 @implementation Contacto
 
-@synthesize contact_asunto_txt,contact_mensaje_txt,contact_nombre_txt;
+@synthesize contact_asunto_txt,contact_mensaje_txt,contact_nombre_txt,datos;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    contact_asunto_txt.delegate = self;
+    contact_mensaje_txt.delegate = self;
+    contact_nombre_txt.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,10 +80,56 @@
     [contact_mensaje_txt resignFirstResponder];
     [contact_asunto_txt resignFirstResponder];
     [contact_nombre_txt resignFirstResponder];
+    [self   regresarframe];
+
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
 
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    if (textField == contact_asunto_txt){
+        [self trans_asunto];
+        
+    }else if(textField == contact_mensaje_txt)
+    {
+        [self trans_mensaje];
+    }
+    else{
+        [self regresarframe];
+    }
+}
+-(void)regresarframe{
+    [UIView beginAnimations:@"advancedAnimations" context:nil];
+    [UIView setAnimationDuration:0.7];
+    datos.alpha = 1.0;
+    CGRect frame_datos = datos.frame;
+    frame_datos.origin.x = 0;
+    frame_datos.origin.y = 0;
+    datos.frame = frame_datos;
+    [UIView commitAnimations];
+}
+
+
+-(void)trans_asunto{
+    [UIView beginAnimations:@"advancedAnimations" context:nil];
+    [UIView setAnimationDuration:0.7];
+    datos.alpha = 1.0;
+    CGRect frame_datos = datos.frame;
+    frame_datos.origin.x = 0;
+    frame_datos.origin.y = -60;
+    datos.frame = frame_datos;
+    [UIView commitAnimations];
+}
+-(void)trans_mensaje{
+    [UIView beginAnimations:@"advancedAnimations" context:nil];
+    [UIView setAnimationDuration:0.7];
+    datos.alpha = 1.0;
+    CGRect frame_datos = datos.frame;
+    frame_datos.origin.x = 0;
+    frame_datos.origin.y = -140;
+    datos.frame = frame_datos;
+    [UIView commitAnimations];
+}
 @end

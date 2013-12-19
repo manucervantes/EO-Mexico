@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Contacto : UIViewController <UITextFieldDelegate>
+@interface Contacto : UIViewController <UITextFieldDelegate,UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *contact_nombre_txt;
 @property (strong, nonatomic) IBOutlet UITextField *contact_asunto_txt;
 @property (strong, nonatomic) IBOutlet UITextField *contact_mensaje_txt;
 - (IBAction)cerrart;
+@property (strong, nonatomic) IBOutlet UIView *datos;
+
 @end
