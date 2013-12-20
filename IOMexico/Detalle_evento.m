@@ -28,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    contenido.backgroundColor = [UIColor clearColor];
+    contenido.textColor = [UIColor whiteColor];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

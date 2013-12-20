@@ -27,10 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    mensaje.backgroundColor =[UIColor clearColor];
+    mensaje.textColor = [UIColor whiteColor];
+    titulo.textColor =[UIColor whiteColor];
+
 }
 
 -(void) viewDidAppear:(BOOL)animated{
-    
+
     PFQuery *query = [PFQuery queryWithClassName:@"Noticias"];
     [query whereKey:@"objectId" equalTo:ides];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

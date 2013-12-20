@@ -64,7 +64,23 @@
         contacto[@"Asunto"] = asunto;
         [contacto setObject:user forKey:@"quien_contacta"];
         [contacto saveInBackground];
+        
+        UIAlertView *alert_error  = [[UIAlertView alloc ] initWithTitle:@"Gracias" message:@"Tu informacion ha sido enviada" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+        [alert_error show];
+        [self limpia_campos];
+        
+        
     }
+}
+-(void)limpia_campos{
+    contact_mensaje_txt.text = @"";
+    contact_nombre_txt.text = @"";
+    contact_asunto_txt.text = @"";
+    [contact_nombre_txt resignFirstResponder];
+    [contact_mensaje_txt resignFirstResponder];
+    [contact_asunto_txt resignFirstResponder];
+    [self regresarframes];
+
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
@@ -85,6 +101,7 @@
 - (IBAction)cerrarname:(id)sender {
 
     [contact_nombre_txt resignFirstResponder];
+    [self   regresarframes];
 
 }
 
@@ -124,7 +141,7 @@
 }
 -(void)trans_mensaje{
     [UIView beginAnimations:@"advancedAnimations" context:nil];
-    [UIView setAnimationDuration:0.7];
+    [UIView setAnimationDuration:0.5];
     datos.alpha = 1.0;
     CGRect frame_datos = datos.frame;
     frame_datos.origin.x = 0;
