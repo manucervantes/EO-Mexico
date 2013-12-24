@@ -15,7 +15,7 @@
 @implementation Detalle_noticia
 
 @synthesize ides;
-@synthesize imagen,titulo,mensaje;
+@synthesize imagen,titulo,mensaje,btn_image;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -47,6 +47,8 @@
                     NSData *imagedata = data;
                     UIImage *image = [UIImage imageWithData:imagedata];
                     imagen.image = image;
+                    [btn_image setImage:image forState:nil];
+                    
                 }];
             }
         } else {
@@ -61,6 +63,8 @@
 }
 - (IBAction)regresar:(id)sender {
         [self dismissViewControllerAnimated:YES  completion:nil];
+}
+- (IBAction)show_image:(id)sender {
 }
 
 @end

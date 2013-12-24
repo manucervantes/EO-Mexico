@@ -50,6 +50,8 @@
 		4C5269ED18577F67007207DE /* eventosretorno.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5269E718577F67007207DE /* eventosretorno.png */; };
 		4C5269EE18577F67007207DE /* lineaeventos.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5269E818577F67007207DE /* lineaeventos.png */; };
 		4C58CB9D1863B59500315696 /* btn enviar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C58CB9C1863B59500315696 /* btn enviar.png */; };
+		4C58CB9F1864B0E300315696 /* color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C58CB9E1864B0E300315696 /* color.jpg */; };
+		4C58CBA11864BBAE00315696 /* logo eoinmutable.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C58CBA01864BBAE00315696 /* logo eoinmutable.png */; };
 		4C5A232818450B50005B51B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5A232718450B50005B51B6 /* Foundation.framework */; };
 		4C5A232A18450B50005B51B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5A232918450B50005B51B6 /* CoreGraphics.framework */; };
 		4C5A232C18450B50005B51B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5A232B18450B50005B51B6 /* UIKit.framework */; };
@@ -148,6 +150,8 @@
 		4C5269E718577F67007207DE /* eventosretorno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eventosretorno.png; sourceTree = "<group>"; };
 		4C5269E818577F67007207DE /* lineaeventos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineaeventos.png; sourceTree = "<group>"; };
 		4C58CB9C1863B59500315696 /* btn enviar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn enviar.png"; sourceTree = "<group>"; };
+		4C58CB9E1864B0E300315696 /* color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = color.jpg; sourceTree = "<group>"; };
+		4C58CBA01864BBAE00315696 /* logo eoinmutable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo eoinmutable.png"; sourceTree = "<group>"; };
 		4C5A232418450B50005B51B6 /* EO Mexico City.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EO Mexico City.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5A232718450B50005B51B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C5A232918450B50005B51B6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -446,6 +450,8 @@
 		4CA9C89A18510D3300FB07E3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C58CBA01864BBAE00315696 /* logo eoinmutable.png */,
+				4C58CB9E1864B0E300315696 /* color.jpg */,
 				4C58CB9C1863B59500315696 /* btn enviar.png */,
 				4C359B1E1862600A008030C3 /* fotoUser.png */,
 				4C359B1C186107D0008030C3 /* btnaplikr.png */,
@@ -633,6 +639,7 @@
 				4CB6C7551857D07C006C4310 /* btn+fotoperfilopciones.png in Resources */,
 				4C15E5EE18563C73007A81AC /* btnmiembros.png in Resources */,
 				4C5A234018450B50005B51B6 /* Images.xcassets in Resources */,
+				4C58CBA11864BBAE00315696 /* logo eoinmutable.png in Resources */,
 				4C359B091860DB7B008030C3 /* fotonoticiasdetalle.png in Resources */,
 				4C0F0842185F6B89009564BD /* lineax3datos contactio.png in Resources */,
 				4C15E5EC18563C73007A81AC /* btncontacto.png in Resources */,
@@ -661,6 +668,7 @@
 				4C5269DF18577DB8007207DE /* btnregresoperfil.png in Resources */,
 				4C15E5E1185639EE007A81AC /* fondo.png in Resources */,
 				4C5269E018577DB8007207DE /* fondoperfil.png in Resources */,
+				4C58CB9F1864B0E300315696 /* color.jpg in Resources */,
 				4C5269E918577F67007207DE /* btnopcioneseventos.png in Resources */,
 				4C15E5ED18563C73007A81AC /* btneventos.png in Resources */,
 				4C5269EE18577F67007207DE /* lineaeventos.png in Resources */,

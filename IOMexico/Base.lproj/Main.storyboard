@@ -401,10 +401,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYJ-ap-7YS">
+                                <rect key="frame" x="144" y="81" width="71" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="show_image:" destination="cbB-9v-vak" eventType="touchUpInside" id="mb6-Yd-2iv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="btn_image" destination="HYJ-ap-7YS" id="1zK-I8-eWT"/>
+                        <outlet property="btnimage_1" destination="5K2-RM-Hc4" id="3fR-j0-GMi"/>
                         <outlet property="imagen" destination="5K2-RM-Hc4" id="uMh-oX-kEh"/>
                         <outlet property="mensaje" destination="64y-Yf-SlV" id="ccb-kK-csb"/>
                         <outlet property="titulo" destination="Fiy-S0-pAG" id="jCM-ia-XXz"/>
@@ -889,23 +901,32 @@
                                 <color key="textColor" red="0.99215692280000001" green="0.99215692280000001" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w69-4r-x6b">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="lineax3datos contactio.png" translatesAutoresizingMaskIntoConstraints="NO" id="w69-4r-x6b">
                                 <rect key="frame" x="30" y="136" width="262" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="cerrar_teclado:" destination="UNk-qu-EKm" eventType="editingDidEndOnExit" id="nSf-ph-XOs"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZS-I7-XYP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="lineax3datos contactio.png" translatesAutoresizingMaskIntoConstraints="NO" id="sZS-I7-XYP">
                                 <rect key="frame" x="30" y="225" width="262" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="cerrar_tecladoEmail:" destination="UNk-qu-EKm" eventType="editingDidEndOnExit" id="2YE-eg-V3y"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bYS-i9-ewf">
-                                <rect key="frame" x="30" y="330" width="262" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="lineax3datos contactio.png" translatesAutoresizingMaskIntoConstraints="NO" id="bYS-i9-ewf">
+                                <rect key="frame" x="30" y="314" width="262" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="cerrar_tecladoEmpresa:" destination="UNk-qu-EKm" eventType="editingDidEndOnExit" id="G58-w0-I9m"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVq-JF-sos">
                                 <rect key="frame" x="120" y="399" width="95" height="31"/>
@@ -913,10 +934,22 @@
                                 <state key="normal" image="btn enviar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="recomendar:" destination="UNk-qu-EKm" eventType="touchUpInside" id="umI-8m-wLT"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo eoinmutable.png" translatesAutoresizingMaskIntoConstraints="NO" id="2xt-Dx-Jvv">
+                                <rect key="frame" x="69" y="492" width="197" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="txt_Email" destination="sZS-I7-XYP" id="c7w-OG-OGn"/>
+                        <outlet property="txt_Empresa" destination="bYS-i9-ewf" id="Ymd-GJ-cgY"/>
+                        <outlet property="txt_Nombre" destination="w69-4r-x6b" id="hx2-pe-eZ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZh-cJ-R0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -968,6 +1001,10 @@
         <image name="lineax3datos contactio.png" width="448" height="17"/>
         <image name="lineax3datos contactio.png" width="448" height="17"/>
         <image name="lineax3datos contactio.png" width="448" height="17"/>
+        <image name="lineax3datos contactio.png" width="448" height="17"/>
+        <image name="lineax3datos contactio.png" width="448" height="17"/>
+        <image name="lineax3datos contactio.png" width="448" height="17"/>
+        <image name="logo eoinmutable.png" width="326" height="71"/>
         <image name="noticiasfondo.png" width="640" height="1136"/>
         <image name="signin.png" width="127" height="45"/>
     </resources>

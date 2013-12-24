@@ -13,5 +13,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imagen;
 @property (strong, nonatomic) IBOutlet UILabel *titulo;
 @property (strong, nonatomic) IBOutlet UITextView *mensaje;
+@property (strong, nonatomic) IBOutlet UIButton *btn_image;
+@property (strong, nonatomic) IBOutlet UIImageView *btnimage_1;
 
 @end
